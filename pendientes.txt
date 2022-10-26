@@ -1,0 +1,9 @@
+Taréas pendientes:
+- Lector QR valido sólo para nuestro sistema
+- QR de asistencia válido sólo en cierto perimetro y en el horario que corresponda para así evitar marcaje de asistencia fraudulento. El profesor podrá ver a los alumnos que marquen asistencia, y en caso de que haya alguno que haya asistencia fraudulenta el docente podrá tomar medidas
+- Mostrar ramos que tenga el alumno en pantalla
+- Guard para la autenticación
+
+Ideas:
+- Eliminar BD y que solo funcione por API (get, post)
+- En caso que el alumno no tenga internet, el celular se descomponga o haya perdida del mismo, el docente podrá marcar asistencia del alumno 

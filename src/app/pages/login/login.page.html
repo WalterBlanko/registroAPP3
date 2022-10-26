@@ -1,0 +1,21 @@
+<ion-content class="ion-padding">
+  <form #form="ngForm" (ngSubmit)="onSubmit()" [formGroup]="formData">
+
+    <ion-item>
+      <ion-label>Email:</ion-label>
+      <ion-input formControlName="email" type="email" placeholder="Ingrese correo" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Contraseña:</ion-label>
+      <ion-input formControlName="password" type="password" placeholder="Ingrese contraseña" required></ion-input>
+    </ion-item>
+
+    <ion-button [disabled]="form.invalid" type="submit" expand="block">Login</ion-button>
+
+    <a [routerLink]="['/forget']">¿Olvidaste tu contraseña?</a>
+  </form>
+  <br><br><br><br>
+  <ion-button (click)="registrarUsuario()">Insertar datos</ion-button>
+  <ion-button (click)="mostrarRamos()">Mostrar ramos</ion-button>
+</ion-content>

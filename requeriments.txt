@@ -1,0 +1,7 @@
+npm i jsqr
+npm i @ionic-native/sqlite
+ionic cordova plugin add cordova-sqlite-storage
+npm i @ionic-native/core
+ionic cordova platform add browser
+ionic cordova build browser
+ionic cordova run browser -l

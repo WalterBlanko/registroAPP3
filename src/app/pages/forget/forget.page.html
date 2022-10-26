@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Cambiar contraseña</ion-title>
+    <ion-buttons>
+      <ion-back-button defaultHref="login"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <form #form="ngForm" (ngSubmit)="onSubmit()" [formGroup]="formData">
+
+    <ion-item>
+      <ion-label>Email:</ion-label>
+      <ion-input formControlName="email" type="email" placeholder="Ingrese su correo" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Contraseña:</ion-label>
+      <ion-input formControlName="password" type="password" placeholder="Ingrese nueva contraseña" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Confirmar contraseña:</ion-label>
+      <ion-input formControlName="confirmPassword" type="password" placeholder="Confirma tu nueva contraseña" required></ion-input>
+    </ion-item>
+
+    <ion-button [disabled]="form.invalid" type="submit" expand="block">Cambiar</ion-button>
+
+  </form>
+
+  <ion-button (click)="mostrarUsuarios()">Buscar</ion-button>
+  <ion-button (click)="mostrarUsuario()">Buscar Usuario</ion-button>
+
+</ion-content>
