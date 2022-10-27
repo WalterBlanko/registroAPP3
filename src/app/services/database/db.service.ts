@@ -130,7 +130,7 @@ export class DbService {
   }
 
   public addTeacher(email, password) {
-    this.storage.executeSql('insert into teacher (teacher_email, teacher_password) values ("' + email + ', ' + password + '")', [])
+    this.storage.executeSql('insert into teacher (teacher_email, teacher_password) values ("' + email + '", "' + password + '")', [])
       .then(() => {
         console.log('Registrado con exito');
       }, (error) => {
@@ -138,8 +138,8 @@ export class DbService {
       })
   }
 
-  public addAsignature(agronym, name, modality, section, hourMin, hourMax, day, teacher_email, student_email) {
-    this.storage.executeSql('insert into asignature (asignature_acronym, asignature_name, asignature_modality, asignature_section, asignature_hourMin, asignature_hourMax, teacher_email) values ("' + agronym + ', ' + name +', '+ modality +', ' + section + ', ' + hourMin + ', ' + hourMax + ', ' + day + ', ' + teacher_email + ', ' + student_email + '")', [])
+  public addAsignature(agronym, name, modality, section, hourMin, hourMax, day, teacher_email) {
+    this.storage.executeSql('insert into asignature (asignature_acronym, asignature_name, asignature_modality, asignature_section, asignature_hourMin, asignature_hourMax, asignature_day, teacher_email) values ("' + agronym + '", "' + name +'", "'+ modality +'", "' + section + '", "' + hourMin + '", "' + hourMax + '", "' + day + '", "' + teacher_email + '")', [])
       .then(() => {
         console.log('Ramo ingresado');
       }, (error) => {
@@ -148,7 +148,7 @@ export class DbService {
   }
 
   public addLesson(acronym, email) {
-    this.storage.executeSql('insert into lesson (asignature_acronym, student_email) values ("' + acronym + ', ' + email + '")', [])
+    this.storage.executeSql('insert into lesson (asignature_acronym, student_email) values ("' + acronym + '", "' + email + '")', [])
       .then(() => {
         console.log('Clase registrada con exito');
       }, (error) => {
@@ -157,7 +157,7 @@ export class DbService {
   }
 
   public addAttendance(attendance, date, hour, student_email, asignature_acronym) {
-    this.storage.executeSql('insert into attendance (attendance, attendance_date, attendance_hour, student_email, asignature_acronym) values ("' + attendance + ', ' + date + ', ' + hour + ', ' + student_email + ', ' + asignature_acronym + '")', [])
+    this.storage.executeSql('insert into attendance (attendance, attendance_date, attendance_hour, student_email, asignature_acronym) values ("' + attendance + '", "' + date + '", "' + hour + '", "' + student_email + '", "' + asignature_acronym + '")', [])
       .then(() => {
         console.log('Asistencia ingresada con exito');
       }, (error) => {
@@ -166,7 +166,7 @@ export class DbService {
   }
 
   public searchMail(correo): Promise<Student> {
-    return this.storage.executeSql('select * from alumno where correo_alumno = ?', [correo])
+    return this.storage.executeSql('select * from student where student_email = ?', [correo])
       .then((res) => {
         return {
           student_email: res.rows.item(0).student_email,
@@ -176,7 +176,7 @@ export class DbService {
   }
 
   public updateUser(email, password) {
-    return this.storage.executeSql(`update alumno set password_alumno = '${password}' where correo_alumno = '${email}'`)
+    return this.storage.executeSql(`update student set student_password = '${password}' where student_email = '${email}'`)
       .then(data => {
         alert(data + ' Cambio de contraseña exitoso');
       })

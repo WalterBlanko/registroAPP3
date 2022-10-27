@@ -69,9 +69,9 @@ export class LoginPage implements OnInit {
     this.connection.addTeacher('profesorXX@profesor.duocuc.cl', 'profesor2');
     this.connection.addTeacher('profesorXXX@profesor.duocuc.cl', 'profesor3');
 
-    this.connection.addAsignature('ASY4131', 'Arquitectura de Software', 'D', '004', '10:00:00', '11:30:00', 'lunes', 'profesorX@profesor.duocuc.cl', 'correo@duocuc.cl');
-    this.connection.addAsignature('CSY4111', 'Calidad de Software', 'D', '004', '10:00:00', '11:30:00', 'martes', 'profesorXX@profesor.duocuc.cl', 'correo@duocuc.cl');
-    this.connection.addAsignature('PGY4121', 'Programación de aplicaciones moviles', 'D', '004', '10:00:00', '11:30:00', 'miercoles', 'profesorXXX@profesor.duocuc.cl', 'correo@duocuc.cl');
+    this.connection.addAsignature('ASY4131', 'Arquitectura de Software', 'D', '004', '10:00:00', '11:30:00', 'lunes', 'profesorX@profesor.duocuc.cl');
+    this.connection.addAsignature('CSY4111', 'Calidad de Software', 'D', '004', '10:00:00', '11:30:00', 'martes', 'profesorXX@profesor.duocuc.cl');
+    this.connection.addAsignature('PGY4121', 'Programación de aplicaciones moviles', 'D', '004', '10:00:00', '11:30:00', 'miercoles', 'profesorXXX@profesor.duocuc.cl');
 
     this.connection.addLesson('ASY4131', 'correo@duocuc.cl');
     this.connection.addLesson('CSY4111', 'correo@duocuc.cl');
