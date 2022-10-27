@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 import { Router, NavigationExtras } from '@angular/router';
 import { DbService } from 'src/app/services/database/db.service';
-import { User } from 'src/app/models/user';
+import { Student } from 'src/app/models/student';
 
 @Component({
   selector: 'app-forget',
@@ -11,7 +11,7 @@ import { User } from 'src/app/models/user';
 })
 export class ForgetPage implements OnInit {
   public formData: FormGroup;
-  private user: User[] = [];
+  private student: Student[] = [];
 
   constructor(
     private connection: DbService,
@@ -36,10 +36,10 @@ export class ForgetPage implements OnInit {
   }
 
   private validateUpdate(email, password, confirmPassword) {
-    var updateUser: User = new User;
+    var updateUser: Student = new Student;
 
-    updateUser.email = email;
-    updateUser.password = password;
+    updateUser.student_email = email;
+    updateUser.student_password = password;
 
     if( password != confirmPassword ) {
       alert('Las contraseñas no coinciden')
@@ -50,10 +50,10 @@ export class ForgetPage implements OnInit {
 
   mostrarUsuarios() {
     console.log('funcionando');
-    this.connection.obtenerUsuarios().then(data => {
-      this.user = data;
-      this.user.forEach(element => {
-        console.log(element.email + ' ' + element.password);
+    this.connection.getStudents().then(data => {
+      this.student = data;
+      this.student.forEach(element => {
+        console.log(element.student_email + ' ' + element.student_password);
       });
     })
   }
@@ -63,7 +63,7 @@ export class ForgetPage implements OnInit {
     var email = this.formData.get('email').value;
 
     this.connection.searchMail(email).then(data => {
-      console.log(data.email + ' ' + data.password);
+      console.log(data.student_email + ' ' + data.student_password);
     });
   }
 }
