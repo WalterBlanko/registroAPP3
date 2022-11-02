@@ -1,78 +1,11 @@
-[
-	{
-		"ramo": "Programación de aplicaciones moviles",
-		"siglas": "PGY4121",
-		"seccion": "004",
-		"modalidad": "D",
-		"profesor": "Jose Ignacio Riquelme Escobar",
-		"estudiantes": [
-			{
-				"correo": "correo@duocuc.cl",
-				"dias": [
-					{
-						"lunes": [
-							{
-								"fecha": "10/10/2022",
-								"hora_inicio": "10:00",
-								"hora_termino": "11:00",
-								"asistencia": [
-									{
-										"hora_marcaje": "10:35",
-										"presente": true
-									}
-								]
-							}
-						],
-						"miercoles": [
-							{
-								"fecha": "12/10/2022",
-								"hora_inicio": "10:00",
-								"hora_termino": "11:00",
-								"asistencia": [
-									{
-										"hora_marcaje": null,
-										"presente": false
-									}
-								]
-							}
-						],
-						"viernes": [
-							{
-								"fecha": "14/10/2022",
-								"hora_inicio": "10:00",
-								"hora_termino": "11:00",
-								"asistencia": [
-									{
-										"hora_marcaje": "10:40",
-										"presente": true
-									}
-								]
-							}
-						]
-					}
-				]
-			}
-		]
-	},
-	{
-		"ramo": "Calidad de software",
-		"siglas": "CSY4111",
-		"seccion": "004",
-		"modalidad": "D",
-		"profesor": "Vicente Eduardo Aranda Chacon"
-	},
-	{
-		"ramo": "Arquitectura de software",
-		"siglas": "ASY4131",
-		"seccion": "007",
-		"modalidad": "D",
-		"profesor": "Guillermo Eugenio Pinto Fuentes"
-	},
-	{
-		"ramo": "Estadistica descriptiva",
-		"siglas": "MAT4140",
-		"seccion": "006",
-		"modalidad": "D",
-		"profesor": "Cristina Alejandra Araya Irribarra"
-	}
-]
+{
+    "ramos": [
+        {
+            "siglas": "PGY4121",
+            "nombre": "Programación de aplicaciones moviles",
+            "seccion": "004",
+            "modalidad": "D",
+            "profesor": "Jose Ignacio Riquelme Escobar"
+        }
+    ]
+}
