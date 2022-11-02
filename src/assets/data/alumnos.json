@@ -1,0 +1,12 @@
+{
+    "estudiantes": [
+        {
+            "correo": "correo@duocuc.cl",
+            "password": "123456"
+        },
+        {
+            "correo": "prueba@duocuc.cl",
+            "password": "testingpassword"
+        }
+    ]
+}

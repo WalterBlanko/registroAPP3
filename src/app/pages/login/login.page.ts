@@ -1,10 +1,13 @@
+import { AuthenticationService } from 'src/app/services/authentication/authentication.service';
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
+import { AlertController, LoadingController } from '@ionic/angular';
 import { Router, NavigationExtras } from '@angular/router';
 import { DbService } from 'src/app/services/database/db.service';
 
 import { Student } from 'src/app/models/student';
 import { Asignature } from 'src/app/models/asignature';
+import { Alert } from 'selenium-webdriver';
 
 @Component({
   selector: 'app-login',
@@ -20,9 +23,16 @@ export class LoginPage implements OnInit {
   public urls: string[] = [];
   navegationExtras: NavigationExtras;
 
+  credentials: FormGroup;
+
   constructor(
     private connection: DbService,
-    private router: Router
+    private router: Router,
+
+    private fb: FormBuilder,
+    private authService: AuthenticationService,
+    private alertCtrl: AlertController,
+    private loadingCtrl: LoadingController
   ) { 
     this.emailRequired = 'El correo es obligatorio \n';
     this.passwordRequired = 'La contraseña es obligatoria \n'
@@ -32,6 +42,11 @@ export class LoginPage implements OnInit {
     this.formData = new FormGroup({
       email: new FormControl('correo@duocuc.cl'),
       password: new FormControl('123456')
+    });
+
+    this.credentials = this.fb.group({
+      email: ['eve.holt@reqres.in', [Validators.required, Validators.email]],
+      password: ['cityslicka', [Validators.required, Validators.minLength(6)]]
     });
   }
 
@@ -98,5 +113,34 @@ export class LoginPage implements OnInit {
     } else {
       this.router.navigate(['/tabs'], this.navegationExtras);
     }
+  }
+
+  async login() {
+    const loading = await this.loadingCtrl.create();
+    await loading.present();
+
+    this.authService.login(this.credentials.value).subscribe(
+      async (res) => {
+        await loading.dismiss();
+        this.router.navigateByUrl('/tabs', { replaceUrl: true });
+      },
+      async (res) => {
+        await loading.dismiss();
+        const alert = await this.alertCtrl.create({
+          header: 'Login failed',
+          message: res.error.error,
+          buttons: ['OK']
+        });
+        await alert.present();
+      }
+    );
+  }
+
+  get email() {
+    return this.credentials.get('email');
+  }
+
+  get password() {
+    return this.credentials.get('password');
   }
 }

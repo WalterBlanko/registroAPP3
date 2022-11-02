@@ -26,7 +26,12 @@ const routes: Routes = [
   {
     path: 'asist',
     loadChildren: () => import('./pages/asist/asist.module').then( m => m.AsistPageModule)
+  },
+  {
+    path: 'testing',
+    loadChildren: () => import('./pages/testing/testing.module').then( m => m.TestingPageModule)
   }
+
 ];
 @NgModule({
   imports: [

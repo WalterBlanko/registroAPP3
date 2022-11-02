@@ -1,0 +1,116 @@
+{
+    "ramos": [
+        {
+            "id": "PGY4121",
+            "nombre": "Programación de aplicaciones moviles",
+            "seccion": "004",
+            "modalidad": "D",
+            "profesor": "Jose Ignacio Riquelme Escobar",
+            "dias": [
+                {
+                    "lunes": [
+                        {
+                            "hora_inicio": "10:00",
+                            "hora_termino": "11:00"
+                        }
+                    ],
+                    "martes": [
+                        {
+                            "hora_inicio": "10:00",
+                            "hora_termino": "11:00"
+                        }
+                    ],
+                    "miercoles": [
+                        {
+                            "hora_inicio": "10:00",
+                            "hora_termino": "11:00"
+                        }
+                    ]
+                }
+            ],
+            "estudiantes": [
+                {
+                    "correo": "correo@duocuc.cl",
+                    "asistencia": [
+                        {
+                            "fecha": "10/10/2022",
+                            "hora_marcaje": "10:25",
+                            "presencia": true
+                        },
+                        {
+                            "fecha": "11/10/2022",
+                            "hora_marcaje": "10:45",
+                            "presencia": true
+                        },
+                        {
+                            "fecha": "12/10/2022",
+                            "hora_marcaje": null,
+                            "presencia": false
+                        }
+                    ]
+                }, 
+                {
+                    "correo": "prueba@duocuc.cl",
+                    "asistencia": [
+                        {
+                            "fecha": "10/10/2022",
+                            "hora_marcaje": null,
+                            "presencia": false
+                        },
+                        {
+                            "fecha": "11/10/2022",
+                            "hora_marcaje": null,
+                            "presencia": false
+                        },
+                        {
+                            "fecha": "12/10/2022",
+                            "hora_marcaje": null,
+                            "presencia": false
+                        }
+                    ]
+                },
+                {
+                    "correo": "test@duocuc.cl",
+                    "asistencia": [
+                        {
+                            "fecha": "10/10/2022",
+                            "hora_marcaje": "10:23",
+                            "presencia": true
+                        },
+                        {
+                            "fecha": "11/10/2022",
+                            "hora_marcaje": "10:55",
+                            "presencia": true
+                        },
+                        {
+                            "fecha": "12/10/2022",
+                            "hora_marcaje": "10:10",
+                            "presencia": true
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "CSY4111",
+            "nombre": "Calidad de software",
+            "seccion": "004",
+            "modalidad": "D",
+            "profesor": "Vicente Eduardo Aranda Chacon"
+        },
+        {
+            "id": "ASY4131",
+            "nombre": "Arquitectura de software",
+            "seccion": "007",
+            "modalidad": "D",
+            "profesor": "Guillermo Eugenio Pinto Fuentes"
+        },
+        {
+            "id": "MAT4140",
+            "nombre": "Estadistica descriptiva",
+            "seccion": "006",
+            "modalidad": "D",
+            "profesor": "Cristina Alejandra Araya Irribarra"
+        }
+    ]
+}
